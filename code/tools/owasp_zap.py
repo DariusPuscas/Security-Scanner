@@ -1,16 +1,13 @@
 import time
 import zapv2
 
-
 def scan_with_zap(target_url):
     try:
         zap = zapv2.ZAPv2(apikey='your_api_key', proxies={'http': 'http://localhost:8080', 'https': 'http://localhost:8080'})
 
-        #zap = zapv2.ZAPv2(proxies={"http": None, "https": None})
-
         # Open URL
         try:
-            zap.urlopen(target_url)
+            zap.urlopen(target_url)  # Removed 'verify=False' to avoid conflict
         except Exception as e:
             print(f"Failed to open URL: {e}")
             return []

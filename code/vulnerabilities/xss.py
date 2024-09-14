@@ -14,4 +14,4 @@ def test_xss(url, param):
 
 
 # Example Usage
-print(test_xss("http://example.com/search", "query"))
+#print(test_xss("http://example.com/search", "query"))

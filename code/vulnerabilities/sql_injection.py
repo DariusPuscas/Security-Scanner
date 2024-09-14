@@ -17,4 +17,4 @@ def test_sql_injection(url, param):
 
 
 # Example Usage
-print(test_sql_injection("http://example.com/search", "query"))
+#print(test_sql_injection("http://example.com/search", "query"))
