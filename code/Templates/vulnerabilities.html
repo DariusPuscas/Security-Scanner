@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vulnerabilities Management</title>
+</head>
+<body>
+    <h1>Vulnerabilities</h1>
+    <a href="{{ url_for('new_vulnerability') }}">Add New Vulnerability</a>
+    <table>
+        <thead>
+            <tr>
+                <th>URL</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Assigned To</th>
+                <th>Date Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vulnerability in vulnerabilities %}
+            <tr>
+                <td>{{ vulnerability.url }}</td>
+                <td>{{ vulnerability.description }}</td>
+                <td>{{ vulnerability.status }}</td>
+                <td>{{ vulnerability.assigned_to }}</td>
+                <td>{{ vulnerability.date_created.strftime('%Y-%m-%d') }}</td>
+                <td>
+                    <a href="{{ url_for('update_vulnerability', id=vulnerability.id) }}">Edit</a> |
+                    <a href="{{ url_for('delete_vulnerability', id=vulnerability.id) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

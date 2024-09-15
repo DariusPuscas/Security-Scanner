@@ -1,2 +1,22 @@
-<h1>Welcome, {{ current_user.username }}!</h1>
-<p>Role: {{ current_user.role }}</p>
+<h2>Welcome, {{ current_user.username }}!</h2>
+<p>Your role: {{ current_user.role }}</p>
+
+<h3>Your Reports</h3>
+<table>
+    <thead>
+        <tr>
+            <th>URL</th>
+            <th>Vulnerabilities dump</th>
+            <th>Date Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.url }}</td>
+            <td>{{ report.vulnerabilities }}</td>
+            <td>{{ report.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
