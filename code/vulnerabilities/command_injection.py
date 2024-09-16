@@ -1,5 +1,11 @@
 import requests
 
+'''
+    Command injection is an attack in which the goal is execution of arbitrary commands 
+    on the host operating system via a vulnerable application. 
+    Command injection attacks are possible when an application passes unsafe user supplied data 
+    (forms, cookies, HTTP headers etc.) to a system shell.
+'''
 def test_command_injection(url):
     command_injection_payloads = [
         "test; cat /etc/passwd",  # Linux command

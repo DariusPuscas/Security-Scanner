@@ -1,5 +1,9 @@
 import requests
 
+'''
+    Directory Traversal attacks, or path traversal, aim to access files in a directory
+    that the attacker should not have access to by manipulating variables that reference file paths. 
+'''
 def test_path_traversal(url):
     path_traversal_payloads = [
         "../../etc/passwd",  # Linux/Unix system file

@@ -1,6 +1,9 @@
 import requests
 
-
+'''
+    SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code
+    for backend database manipulation to access information that was not intended to be displayed
+'''
 def test_sql_injection(url, param):
     payload = "' OR 1=1 --"
     # Construct URL with vulnerable parameter

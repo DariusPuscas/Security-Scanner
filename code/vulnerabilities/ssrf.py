@@ -1,10 +1,14 @@
 import requests
 
-
+'''
+A Server-Side Request Forgery (SSRF) attack involves an attacker abusing server functionality
+to access or modify resources. The attacker targets an application that supports data imports 
+from URLs or allows them to read data from URLs
+'''
 def test_ssrf(url):
     ssrf_test_urls = [
         "http://127.0.0.1",
-        "http://169.254.169.254",  # AWS metadata service, indicator for SSRF
+        "http://169.254.169.254",  # AWS metadata service, indicator for     SSRF
         "http://localhost",
         "http://0.0.0.0"
     ]

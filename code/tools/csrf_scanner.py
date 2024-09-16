@@ -1,5 +1,10 @@
 import requests
 
+'''
+    Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users 
+    to submit a request to a Web application against which they are currently authenticated.
+    CSRF attacks exploit the trust a Web application has in an authenticated user
+'''
 def test_csrf(url):
     proxies = {
         "http": None,

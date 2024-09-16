@@ -1,5 +1,12 @@
 import requests
 
+'''
+    HTTP security headers are those HTTP headers that are related specifically to security,
+    exchanged between a client (like a web browser) and a server to define the security 
+    of HTTP communication.
+    These include dedicated security headers and several others 
+    that can indirectly affect privacy and security.
+'''
 def test_security_headers(url):
     try:
         response = requests.get(url, timeout=5)

@@ -1,4 +1,9 @@
 import requests
+
+'''
+    Cross-site scripting (XSS) is an attack in which an attacker injects malicious executable scripts
+    into the code of a trusted application or website.
+'''
 def test_xss(url, param):
     xss_payload = "<script>alert('XSS')</script>"
     test_url = f"{url}?{param}={xss_payload}"
@@ -14,4 +19,4 @@ def test_xss(url, param):
 
 
 # Example Usage
-#print(test_xss("http://example.com/search", "query"))
+#xprint(test_xss("http://example.com/search", "query"))

@@ -1,6 +1,11 @@
 import time
 import zapv2
 
+'''
+    ZAP is a free open source platform-agnostic security testing tool that scans 
+    through your web application to identity any security vulnerabilities 
+'''
+
 def scan_with_zap(target_url):
     try:
         zap = zapv2.ZAPv2(apikey='your_api_key', proxies={'http': 'http://localhost:8080', 'https': 'http://localhost:8080'})
