@@ -137,10 +137,33 @@ This template lists all known vulnerabilities in the system, accessible to admin
       - Add New Vulnerabilities: Admins can add new types of vulnerabilities using the new_vulnerability.html form.
       - Update Vulnerabilities: Admins can update vulnerability details, such as payloads or detection methods, via update_vulnerability.html.
       - Remove Vulnerabilities: Admins can remove a vulnerability
+      - 
+## Troubleshooting
+
+If you run into any problems, here are some common solutions:
+
+- **Database Errors**:
+  - Ensure that SQLite is properly initialized with `flask db init` and `flask db migrate`.
+
+- **Dependencies Issues**:
+  - Run `pip install -r requirements.txt` to make sure all dependencies are installed.
+
+- **Scanning Issues**:
+  - If vulnerability tests fail, ensure that the URLs you're testing are reachable and that the payloads are not blocked by firewalls or other network restrictions.
+
+- **Permission Errors**:
+  - Ensure that your Flask app has proper file access permissions, especially if you're running it on a Linux server.
    
-# Security Considerations
-    Password Hashing: User passwords are hashed using Werkzeug with SHA256.
-    Input Validation: Ensure all user input is sanitized to prevent exploitation during the scanning process.
+## Security Considerations
+
+- **User Passwords**: Passwords are hashed using secure hashing algorithms (e.g., SHA256).
+ 
+- **Session Management**: Flask's session management is used to handle login and user sessions securely.
+ 
+- **Database Security**: SQL queries use parameterized statements to prevent SQL injection in the application’s backend.
+ 
+- **Vulnerability Output Handling**: Ensure that scan results are properly sanitized before being rendered in templates to prevent stored XSS.
+
     
 # Extending the Application
 The application is designed to be extensible. To add new vulnerability tests:
