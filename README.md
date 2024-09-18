@@ -137,7 +137,7 @@ This template lists all known vulnerabilities in the system, accessible to admin
       - Add New Vulnerabilities: Admins can add new types of vulnerabilities using the new_vulnerability.html form.
       - Update Vulnerabilities: Admins can update vulnerability details, such as payloads or detection methods, via update_vulnerability.html.
       - Remove Vulnerabilities: Admins can remove a vulnerability
-      - 
+       
 ## Troubleshooting
 
 If you run into any problems, here are some common solutions:
